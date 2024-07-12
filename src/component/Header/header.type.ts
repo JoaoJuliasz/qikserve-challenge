@@ -1,0 +1,1 @@
+export type MenuOption = "MENU" | "ENTRAR" | "CONTATO";
