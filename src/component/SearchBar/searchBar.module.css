@@ -1,5 +1,5 @@
 .container {
-    margin: 6px 16px;
+    margin: 6px 0;
     border: 1px solid #8A94A4;
     border-radius: 8px;
     display: flex;
@@ -20,4 +20,10 @@
 
 .container .icon {
     margin: 8px;
+}
+
+@media only screen and (max-width: 1050px) {
+    .container {
+        margin: 6px 16px;
+    }
 }
