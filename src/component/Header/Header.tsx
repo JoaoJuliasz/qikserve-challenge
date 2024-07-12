@@ -11,7 +11,7 @@ type Props = {
 const Header = ({ bgColor, bannerImg }: Props) => {
     return (
         <div className={style.container}>
-            <div className={style.itemsWrapper} style={{ background: bgColor }}>
+            <div className={style.itemsWrapper} style={{ background: bgColor }} data-testid="header-menu">
                 <DesktopMenu />
                 <MobileMenu />
             </div>
