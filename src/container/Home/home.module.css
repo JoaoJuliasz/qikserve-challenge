@@ -4,3 +4,14 @@
     justify-content: center;
     height: 100vh;
 }
+
+.container .body {
+    background: #EEEEEE;
+    margin: 5px 0px;
+    padding: 6px 0px;
+}
+
+.container .body .content {
+    margin: 0px auto;
+    max-width: 1024px;
+}
