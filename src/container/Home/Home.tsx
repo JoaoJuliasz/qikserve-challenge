@@ -9,13 +9,19 @@ import { useFetch } from "../../hooks/useFetch/useFetch"
 import style from './home.module.css'
 
 const Home = () => {
+    const [menu, setMenu] = useState({} as Menu)
     const [venue, setVenue] = useState({} as Venue)
+    const [loading, setLoading] = useState<boolean>(true)
 
-    const { loading, fetchData } = useFetch()
+    const { fetchData } = useFetch()
 
-    const getData = async () => {
-        const data = await fetchData<Venue>('/api/challenge/venue/9')
-        setVenue(data)
+    const getData = () => {
+        Promise.all([fetchData<Venue>('/api/challenge/venue/9'), fetchData<Menu>('/api/challenge/menu')])
+            .then(res => {
+                setVenue(res[0])
+                setMenu(res[1])
+            })
+            .finally(() => setLoading(false))
     }
 
     useEffect(() => {
@@ -31,7 +37,7 @@ const Home = () => {
     return (
         <div className={style.container}>
             <Header bgColor={venue.webSettings.navBackgroundColour} bannerImg={venue.webSettings.bannerImage} />
-            <Body />
+            <Body menu={menu} primaryColour={venue.webSettings.primaryColour} />
         </div>
     )
 }

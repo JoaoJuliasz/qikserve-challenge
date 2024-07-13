@@ -8,3 +8,14 @@
     margin: 0px auto;
     max-width: 1024px;
 }
+
+.container .wrapper .cardWrapper {
+    background: #F8F9FA;
+    padding: 32px 40px;
+    max-width: 1024px;
+}
+
+.container .wrapper .cardWrapper .card {
+    background: #ffffff;
+    box-shadow: #00000024 0px 2px 14px 0px;
+}

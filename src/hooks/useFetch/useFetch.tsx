@@ -1,8 +1,4 @@
-import { useState } from "react"
-
 export const useFetch = () => {
-    const [loading, setLoading] = useState<boolean>(true)
-
     async function fetchData<T>(path: string): Promise<T> {
         try {
             const response = await fetch(path)
@@ -14,10 +10,8 @@ export const useFetch = () => {
         } catch (error) {
             console.error('Error fetching data:', error)
             throw error
-        } finally {
-            setLoading(false)
         }
     }
 
-    return { loading, fetchData }
+    return { fetchData }
 }
