@@ -1,0 +1,30 @@
+.nameWrapper {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding-bottom: 12px;
+}
+
+.nameWrapper .name {
+    font-family: Roboto;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 28.13px;
+    letter-spacing: 0.5px;
+    text-align: left;
+    margin: 0;
+    color: #121212;
+}
+
+.nameWrapper .icon {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.nameWrapper .icon.up {
+    transform: rotate(0deg);
+}
+
+.nameWrapper .icon.down {
+    transform: rotate(180deg);
+}

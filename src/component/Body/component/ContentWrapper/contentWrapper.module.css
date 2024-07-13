@@ -1,0 +1,15 @@
+.content {
+    margin: 32px 16px;
+}
+
+.content .notShow {
+    max-height: 0px;
+    opacity: 0;
+    transition: max-height 0.5s ease-in-out;
+}
+
+.content .show {
+    max-height: auto;
+    opacity: 1;
+    transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
