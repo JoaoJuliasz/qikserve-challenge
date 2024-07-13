@@ -10,8 +10,8 @@ const DesktopMenu = () => {
     return (
         <div className={style.desktop}>
             {menuOptions.map(option =>
-                <h6 key={option} className={`${style.item} ${selected === option ? style.selected : ''}`}
-                    onClick={() => setSelected(option)}>{option}</h6>
+                <h4 key={option} className={`${style.item} ${selected === option ? style.selected : ''}`}
+                    onClick={() => setSelected(option)}>{option}</h4>
             )}
         </div>
     );
