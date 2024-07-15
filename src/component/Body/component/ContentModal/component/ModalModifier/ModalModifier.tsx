@@ -1,13 +1,15 @@
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, Dispatch, SetStateAction, useState } from "react";
 import { useConversion } from "../../../../../../hooks/useConversion/useConversion";
 
 import style from './modalModifier.module.css'
 
 type Props = {
     modifier: Modifier
+    setItemPrice: Dispatch<SetStateAction<number>>
+    setOptions: Dispatch<SetStateAction<string[]>>
 }
 
-const ModalModifier = ({ modifier }: Props) => {
+const ModalModifier = ({ modifier, setItemPrice, setOptions }: Props) => {
     const [modifierSelections, setModifierSelections] = useState({} as { [type: string]: number })
 
     const { formatCurrency } = useConversion()
@@ -15,6 +17,8 @@ const ModalModifier = ({ modifier }: Props) => {
     const handleChangeRadio = (event: ChangeEvent<HTMLInputElement>) => {
         const { name, value } = event.target
         setModifierSelections(prev => ({ ...prev, [name]: Number(value) }))
+        setItemPrice(Number(value))
+        setOptions(prev => ([...prev, `${name} (${formatCurrency(Number(value))})`]))
     }
 
     return (
@@ -25,7 +29,7 @@ const ModalModifier = ({ modifier }: Props) => {
             </div>
             {
                 modifier.items.map(item => (
-                    <div className={style.item}>
+                    <div className={style.item} key={item.id}>
                         <div className={style.wrapper}>
                             <span className={style.name}>{item.name}</span>
                             <span className={style.price}>{formatCurrency(item.price)}</span>

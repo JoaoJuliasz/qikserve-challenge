@@ -8,6 +8,7 @@ import ModalModifier from './component/ModalModifier/ModalModifier';
 import style from './contentModal.module.css'
 import ModalButton from '../../../ModalButton/ModalButton';
 import QuantityUpdate from '../QuantityUpdate/QuantityUpdate';
+import { useHomeContext } from '../../../../hooks/useHomeContext/useHomeContext';
 
 type Props = {
     item: MenuItem
@@ -16,8 +17,21 @@ type Props = {
 
 const ContentModal = ({ item, setOpen }: Props) => {
     const [size, setSize] = useState<number>(1)
+    const [itemPrice, setItemPrice] = useState<number>(0)
+    const [options, setOptions] = useState<string[]>([])
 
     const { formatCurrency } = useConversion()
+
+    const { setCart } = useHomeContext()
+
+    const handleClick = () => {
+        setCart(prev => ([...prev, {
+            price: itemPrice || item.price,
+            total: size,
+            options
+        }]))
+        setOpen(false)
+    }
 
     return (
         <Modal setOpen={setOpen} headerImg={item.images?.[0].image}>
@@ -29,14 +43,14 @@ const ContentModal = ({ item, setOpen }: Props) => {
                 {item.modifiers ?
                     <div style={{ maxHeight: '150px', overflow: 'auto' }}>
                         {item.modifiers.map(modifier => (
-                            <ModalModifier key={modifier.id} modifier={modifier} />
+                            <ModalModifier key={modifier.id} modifier={modifier} setItemPrice={setItemPrice} setOptions={setOptions} />
                         ))}
                     </div>
                     : null
                 }
                 <div className={style.footer}>
                     <QuantityUpdate size={size} setSize={setSize} />
-                    <ModalButton disabled={size === 0} text={`Add to order • ${formatCurrency(item.price * size)}`} />
+                    <ModalButton disabled={size === 0} text={`Add to order • ${formatCurrency((itemPrice || item.price) * size)}`} onClick={handleClick} />
                 </div>
             </div>
         </Modal>

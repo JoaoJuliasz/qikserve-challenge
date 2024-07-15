@@ -3,6 +3,7 @@ import Body from "../../component/Body/Body"
 
 import Header from "../../component/Header/Header"
 import Spinner from "../../component/Spinner/Spinner"
+import { HomeProvider } from "../../Context/HomeContext"
 
 import { useFetch } from "../../hooks/useFetch/useFetch"
 
@@ -11,6 +12,7 @@ import style from './home.module.css'
 const Home = () => {
     const [menu, setMenu] = useState({} as Menu)
     const [venue, setVenue] = useState({} as Venue)
+    const [cart, setCart] = useState<CartItem[]>([])
     const [loading, setLoading] = useState<boolean>(true)
 
     const { fetchData } = useFetch()
@@ -35,10 +37,12 @@ const Home = () => {
     )
 
     return (
-        <div className={style.container}>
-            <Header bgColor={venue.webSettings.navBackgroundColour} bannerImg={venue.webSettings.bannerImage} />
-            <Body menu={menu} primaryColour={venue.webSettings.primaryColour} />
-        </div>
+        <HomeProvider value={{ menu, venue, cart, setCart }}>
+            <div className={style.container}>
+                <Header bgColor={venue.webSettings.navBackgroundColour} bannerImg={venue.webSettings.bannerImage} />
+                <Body menu={menu} primaryColour={venue.webSettings.primaryColour} />
+            </div>
+        </HomeProvider>
     )
 }
 

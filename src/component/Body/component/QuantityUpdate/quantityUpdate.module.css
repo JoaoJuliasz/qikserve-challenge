@@ -21,7 +21,7 @@
 }
 
 .container .max {
-    background: red;
+    background: var(--primaryColour);
 }
 
 .container .value {
