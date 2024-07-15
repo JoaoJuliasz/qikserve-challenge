@@ -17,9 +17,9 @@ const QuantityUpdate = ({ size, cart, addMethod, subMethod, }: Props) => {
 
     return (
         <div className={`${style.container} ${cart ? style.cart : ''}`} style={{ '--primaryColour': venue.webSettings.primaryColour } as CSSProperties}>
-            <span className={`${style.min} ${style.btn}`} onClick={subMethod}><MinIcon cart={cart} /></span>
+            <span data-testid="min" className={`${style.min} ${style.btn}`} onClick={subMethod}><MinIcon cart={cart} /></span>
             <span className={style.value}>{size}</span>
-            <span className={`${style.max} ${style.btn}`} onClick={addMethod}><MaxIcon cart={cart} /></span>
+            <span data-testid="max" className={`${style.max} ${style.btn}`} onClick={addMethod}><MaxIcon cart={cart} /></span>
         </div>
     );
 };
