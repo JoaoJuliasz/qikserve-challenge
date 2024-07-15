@@ -3,7 +3,7 @@
 }
 
 .container .titleWrapper {
-    background: #F8F9FA;
+    background: var(--gray-bg);
     padding: 16px;
 }
 
@@ -15,7 +15,7 @@
     letter-spacing: 0.5px;
     text-align: left;
     margin: 4px 0;
-    color: #464646;
+    color: var(--text-color);
 }
 
 .container .titleWrapper .subTitle {
@@ -46,7 +46,7 @@
     font-weight: 500;
     line-height: 18.75px;
     text-align: left;
-    color: #121212;
+    color: var(--dark-text-color);
     margin: 4px 0;
 }
 
@@ -56,7 +56,7 @@
     font-weight: 400;
     line-height: 18.75px;
     text-align: left;
-    color: #464646;
+    color: var(--text-color);
 }
 
 .container .item .input {

@@ -1,0 +1,36 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    margin: 8px 16px;
+}
+
+.container .wrapper .details {
+    display: flex;
+    flex-direction: column;
+}
+
+.container .wrapper .details .name {
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 18.75px;
+    color: var(--dark-text-color);
+}
+
+.container .wrapper .details .option {
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 18.75px;
+    margin: 4px 0   ;
+    color: #5F5F5F;
+}
+
+.container .price {
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 18.75px;
+    letter-spacing: 0.5px;
+    color: var(--dark-text-color);
+}

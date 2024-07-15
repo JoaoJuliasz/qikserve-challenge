@@ -1,25 +1,25 @@
-import { CSSProperties, Dispatch, SetStateAction } from "react";
-
-import minIcon from '../../assets/icon/min.svg'
-import maxIcon from '../../assets/icon/max.svg'
+import { CSSProperties } from "react";
 
 import style from './quantityUpdate.module.css'
 import { useHomeContext } from "../../hooks/useHomeContext/useHomeContext";
+import MinIcon from "./component/MinIcon/MinIcon";
+import MaxIcon from "./component/MaxIcon/MaxIcon";
 
 type Props = {
     size: number
+    cart?: boolean
     subMethod: () => void
     addMethod: () => void
 }
 
-const QuantityUpdate = ({ size, addMethod, subMethod, }: Props) => {
+const QuantityUpdate = ({ size, cart, addMethod, subMethod, }: Props) => {
     const { venue } = useHomeContext()
 
     return (
-        <div className={style.container} style={{ '--primaryColour': venue.webSettings.primaryColour } as CSSProperties}>
-            <span className={`${style.min} ${style.btn}`} onClick={subMethod}><img src={minIcon} /></span>
+        <div className={`${style.container} ${cart ? style.cart : ''}`} style={{ '--primaryColour': venue.webSettings.primaryColour } as CSSProperties}>
+            <span className={`${style.min} ${style.btn}`} onClick={subMethod}><MinIcon cart={cart} /></span>
             <span className={style.value}>{size}</span>
-            <span className={`${style.max} ${style.btn}`} onClick={addMethod}><img src={maxIcon} /></span>
+            <span className={`${style.max} ${style.btn}`} onClick={addMethod}><MaxIcon cart={cart} /></span>
         </div>
     );
 };

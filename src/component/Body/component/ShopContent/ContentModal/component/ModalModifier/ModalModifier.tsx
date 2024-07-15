@@ -16,7 +16,7 @@ const ModalModifier = ({ modifier, setItemPrice, setOptions }: Props) => {
 
     const handleChangeRadio = (event: ChangeEvent<HTMLInputElement>) => {
         const { name, value } = event.target
-        setModifierSelections(prev => ({ ...prev, [name]: Number(value) }))
+        setModifierSelections(prev => ({ ...prev, [modifier.name]: Number(value) }))
         setItemPrice(Number(value))
         setOptions(prev => ([...prev, `${name} (${formatCurrency(Number(value))})`]))
     }
@@ -34,7 +34,7 @@ const ModalModifier = ({ modifier, setItemPrice, setOptions }: Props) => {
                             <span className={style.name}>{item.name}</span>
                             <span className={style.price}>{formatCurrency(item.price)}</span>
                         </div>
-                        <input className={style.input} type="radio" name={modifier.name} value={item.price}
+                        <input className={style.input} type="radio" name={item.name} value={item.price}
                             checked={modifierSelections[modifier.name] === item.price}
                             onChange={handleChangeRadio} />
                     </div>

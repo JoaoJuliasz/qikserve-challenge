@@ -13,7 +13,7 @@
     font-weight: 700;
     line-height: 28.13px;
     text-align: left;
-    color: #121212;
+    color: var(--dark-text-color);
     margin: 8px 0;
 }
 
@@ -24,11 +24,11 @@
     line-height: 18.75px;
     letter-spacing: 0.5px;
     text-align: left;
-    color: #464646;
+    color: var(--text-color);
 }
 
 .container .options {
-    max-width: 150px;
+    max-height: 150px;
     overflow: auto;
 }
 
@@ -72,5 +72,5 @@
     font-weight: 600;
     line-height: 28.64px;
     text-align: center;
-    color: #121212;
+    color: var(--dark-text-color);
 }

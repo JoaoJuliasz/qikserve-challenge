@@ -11,7 +11,7 @@
 }
 
 .overlay .content {
-  background-color: #F8F9FA;
+  background-color: var(--gray-bg);
   margin-top: 50px;
   height: fit-content;
   max-height: 720px;

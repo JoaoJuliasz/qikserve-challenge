@@ -10,7 +10,7 @@
 }
 
 .container .wrapper .cardWrapper {
-    background: #F8F9FA;
+    background: var(--gray-bg);
     padding: 32px 40px;
     max-width: 1024px;
     display: flex;

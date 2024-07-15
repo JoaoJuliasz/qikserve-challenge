@@ -16,7 +16,7 @@
     font-weight: 500;
     line-height: 18.75px;
     text-align: left;
-    color: #121212;
+    color: var(--dark-text-color);
     margin: 4px 0;
 }
 
@@ -26,7 +26,7 @@
     font-weight: 300;
     line-height: 18.75px;
     text-align: left;
-    color: #464646;
+    color: var(--text-color);
     margin: 4px 0;
     max-width: 416px;
     white-space: nowrap;
@@ -41,7 +41,7 @@
     line-height: 18.75px;
     letter-spacing: 0.5px;
     text-align: left;
-    color: #464646;
+    color: var(--text-color);
     margin: 4px 0;
 }
 
@@ -58,5 +58,5 @@
     width: 128px;
     height: 85px;
     object-fit: cover;
-    border-radius: 6px;
+    border-radius: 4px;
 }

@@ -42,7 +42,7 @@
     line-height: 18.75px;
     letter-spacing: 0.5px;
     text-align: center;
-    color: #121212;
+    color: var(--dark-text-color);
     padding: 20px 0;
 }
 

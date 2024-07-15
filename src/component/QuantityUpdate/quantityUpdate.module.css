@@ -30,5 +30,25 @@
     font-weight: 600;
     line-height: 28.64px;
     text-align: center;
-    color: #121212;
+    color: var(--dark-text-color);
+}
+
+.container.cart {
+    align-items: center;
+    margin: 8px 0;
+}
+
+.container.cart .btn {
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    background: var(--primaryColour);
+}
+
+.container.cart .value {
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18.75px;
+    margin: 0 8px;
 }

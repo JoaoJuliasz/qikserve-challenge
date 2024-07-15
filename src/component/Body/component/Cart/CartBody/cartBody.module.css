@@ -1,0 +1,63 @@
+.empty {
+    padding: 24px;
+}
+
+.empty .text {
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 18.75px;
+    text-align: left;
+    color: var(--text-color);
+    margin: 0;
+}
+
+.container .totalWrapper {
+    background: var(--gray-bg);
+}
+
+.container .totalWrapper .wrapper {
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container .totalWrapper .wrapper:first-of-type {
+    border-top: 1px solid #dadada;
+    border-bottom: 1px solid #dadada;
+}
+
+.container .totalWrapper .wrapper .subTotal {
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 18.75px;
+    color: var(--dark-text-color);
+}
+
+.container .totalWrapper .wrapper .subValue {
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 18.75px;
+    color: var(--dark-text-color);
+}
+
+.container .totalWrapper .wrapper .total {
+    font-family: SF Pro Display;
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 28.64px;
+    color: var(--dark-text-color);
+    margin: 0;
+}
+
+.container .totalWrapper .wrapper .value {
+    font-family: SF Pro Display;
+    font-size: 24px;
+    line-height: 28.13px;
+    font-weight: 500;
+    color: var(--dark-text-color);
+    margin: 0;
+}
