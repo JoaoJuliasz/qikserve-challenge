@@ -1,0 +1,71 @@
+.container {
+    background: #fff;
+}
+
+.container .item {
+    padding: 16px;
+    border-bottom: 1px solid #eee;
+}
+
+.container .item .title {
+    font-family: Roboto;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 28.13px;
+    text-align: left;
+    color: #121212;
+    margin: 8px 0;
+}
+
+.container .item .subTitle {
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 18.75px;
+    letter-spacing: 0.5px;
+    text-align: left;
+    color: #464646;
+}
+
+.container .footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 24px 0;
+}
+
+.container .footer .size {
+    margin-bottom: 9px;
+    display: flex;
+}
+
+.container .footer .size .btn {
+    border-radius: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    margin: 0 16px;
+    padding: 2px;
+    user-select: none;
+}
+
+.container .footer .size .min {
+    background: #DADADA;
+}
+
+.container .footer .size .max {
+    background: red;
+}
+
+.container .footer .size .value {
+    font-family: SF Pro Display;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 28.64px;
+    text-align: center;
+    color: #121212;
+}

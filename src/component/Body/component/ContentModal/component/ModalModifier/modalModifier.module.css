@@ -1,0 +1,67 @@
+.container {
+    border-bottom: 1px solid #eee;
+}
+
+.container .titleWrapper {
+    background: #F8F9FA;
+    padding: 16px;
+}
+
+.container .titleWrapper .title {
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18.75px;
+    letter-spacing: 0.5px;
+    text-align: left;
+    margin: 4px 0;
+    color: #464646;
+}
+
+.container .titleWrapper .subTitle {
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 18.75px;
+    letter-spacing: 0.5px;
+    text-align: left;
+    color: #5F5F5F;
+}
+
+.container .item {
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container .item .wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.container .item .wrapper .name {
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 18.75px;
+    text-align: left;
+    color: #121212;
+    margin: 4px 0;
+}
+
+.container .item .wrapper .price {
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 18.75px;
+    text-align: left;
+    color: #464646;
+}
+
+.container .item .input {
+    accent-color: #5F5F5F;
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+}

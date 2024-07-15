@@ -21,4 +21,5 @@
     box-shadow: #00000024 0px 2px 14px 0px;
     flex: var(--flex);
     margin: 0 12px;
+    height: fit-content;
 }

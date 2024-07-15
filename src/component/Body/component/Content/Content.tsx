@@ -10,7 +10,7 @@ const Content = ({ content }: Props) => {
         <div className={style.container}>
             {
                 content.map(section => (
-                    <ContentWrapper key={section.id} section={section}/>
+                    <ContentWrapper key={section.id} section={section} />
                 ))
             }
         </div>
