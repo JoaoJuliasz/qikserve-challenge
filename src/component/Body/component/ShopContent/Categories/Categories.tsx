@@ -19,7 +19,7 @@ const Categories = ({ sections, primaryColour }: Props) => {
         <div className={style.container}>
             {
                 sections.map(({ title, image }) => (
-                    <div className={`${style.section} ${compareWithSelected(title) ? style.selected : ''}`} key={title}
+                    <a href={`/#${title}`} className={`${style.section} ${compareWithSelected(title) ? style.selected : ''}`} key={title}
                         style={{ '--primary-color': primaryColour } as React.CSSProperties} onClick={() => handleClick(title)}>
                         <div className={!compareWithSelected(title) ? style.imgWrapper : style.imgWrapperSelected}>
                             <div className={style.img} style={{
@@ -27,7 +27,7 @@ const Categories = ({ sections, primaryColour }: Props) => {
                             }} />
                         </div>
                         <span className={`${style.title} ${compareWithSelected(title) ? style.selected : ''}`}>{title}</span>
-                    </div>
+                    </a>
                 ))
             }
         </div >

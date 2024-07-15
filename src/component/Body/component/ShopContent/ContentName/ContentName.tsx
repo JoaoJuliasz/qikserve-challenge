@@ -14,7 +14,7 @@ const ContentName = ({ name, show, setShow }: Props) => {
     const handleClick = () => setShow(prev => !prev)
 
     return (
-        <div className={style.nameWrapper}>
+        <div className={style.nameWrapper} id={name}>
             <h5 className={style.name}>{name}</h5>
             <img className={`${style.icon} ${show ? style.up : style.down}`} src={icon} onClick={handleClick}/>
         </div>

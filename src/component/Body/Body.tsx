@@ -22,6 +22,13 @@ const Body = ({ primaryColour }: Props) => {
         return menu.sections.map(item => ({ title: item.name, image: item.images[0].image }))
     }, [menu])
 
+    const filteredContent = useMemo(() => {
+        return menu.sections.map(section => ({
+            ...section,
+            items: section.items.filter(value => value.name.toLowerCase().includes(searchValue.toLowerCase()))
+        }))
+    }, [menu.sections, searchValue])
+
     return (
         <div className={style.container}>
             <div className={style.wrapper}>
@@ -29,7 +36,7 @@ const Body = ({ primaryColour }: Props) => {
                 <div className={style.cardWrapper}>
                     <div className={style.card} style={{ '--flex': 2 } as React.CSSProperties}>
                         <Categories sections={sections} primaryColour={primaryColour} />
-                        <Content content={menu.sections} />
+                        <Content content={filteredContent} />
                     </div>
                     <div className={style.card} style={{ '--flex': 1 } as React.CSSProperties}>
                         <CartComponent />

@@ -1,5 +1,4 @@
 import ContentWrapper from '../ContentWrapper/ContentWrapper';
-import style from './content.module.css'
 
 type Props = {
     content: Section[]
@@ -7,7 +6,7 @@ type Props = {
 
 const Content = ({ content }: Props) => {
     return (
-        <div className={style.container}>
+        <div>
             {
                 content.map(section => (
                     <ContentWrapper key={section.id} section={section} />
