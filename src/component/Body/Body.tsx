@@ -1,8 +1,9 @@
 import { useMemo, useState } from "react";
 
 import SearchBar from "../SearchBar/SearchBar";
-import Categories from "./component/Categories/Categories";
-import Content from "./component/Content/Content";
+import Categories from "./component/ShopContent/Categories/Categories";
+import Content from "./component/ShopContent/Content/Content";
+import CartComponent from "./component/Cart/Cart";
 
 import style from './body.module.css'
 
@@ -17,7 +18,7 @@ const Body = ({ menu, primaryColour }: Props) => {
     const sections = useMemo(() => {
         return menu.sections.map(item => ({ title: item.name, image: item.images[0].image }))
     }, [menu])
-    
+
     return (
         <div className={style.container}>
             <div className={style.wrapper}>
@@ -27,7 +28,9 @@ const Body = ({ menu, primaryColour }: Props) => {
                         <Categories sections={sections} primaryColour={primaryColour} />
                         <Content content={menu.sections} />
                     </div>
-                    <div className={style.card} style={{ '--flex': 1 } as React.CSSProperties}></div>
+                    <div className={style.card} style={{ '--flex': 1 } as React.CSSProperties}>
+                        <CartComponent />
+                    </div>
                 </div>
             </div>
         </div >

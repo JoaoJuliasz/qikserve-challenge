@@ -7,7 +7,7 @@ import ModalModifier from './component/ModalModifier/ModalModifier';
 
 import style from './contentModal.module.css'
 import ModalButton from '../../../../ModalButton/ModalButton';
-import QuantityUpdate from '../QuantityUpdate/QuantityUpdate';
+import QuantityUpdate from '../../../../QuantityUpdate/QuantityUpdate';
 import { useHomeContext } from '../../../../../hooks/useHomeContext/useHomeContext';
 
 type Props = {
@@ -26,6 +26,7 @@ const ContentModal = ({ item, setOpen }: Props) => {
 
     const handleClick = () => {
         setCart(prev => ([...prev, {
+            title: item.name,
             price: itemPrice || item.price,
             total: size,
             options
@@ -49,7 +50,7 @@ const ContentModal = ({ item, setOpen }: Props) => {
                     : null
                 }
                 <div className={style.footer}>
-                    <QuantityUpdate size={size} setSize={setSize} />
+                    <QuantityUpdate size={size} subMethod={() => setSize(prev => prev > 0 ? prev - 1 : 0)} addMethod={() => setSize(prev => prev + 1)} />
                     <ModalButton disabled={size === 0} text={`Add to order • ${formatCurrency((itemPrice || item.price) * size)}`} onClick={handleClick} />
                 </div>
             </div>

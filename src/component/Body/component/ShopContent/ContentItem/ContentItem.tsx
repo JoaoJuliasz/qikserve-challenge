@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useConversion } from "../../../../hooks/useConversion/useConversion";
+import { useConversion } from "../../../../../hooks/useConversion/useConversion";
 import ContentModal from "../ContentModal/ContentModal";
 import style from './contentItem.module.css'
 

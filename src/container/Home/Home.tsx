@@ -12,7 +12,7 @@ import style from './home.module.css'
 const Home = () => {
     const [menu, setMenu] = useState({} as Menu)
     const [venue, setVenue] = useState({} as Venue)
-    const [cart, setCart] = useState<CartItem[]>([])
+    const [cart, setCart] = useState<Cart>([])
     const [loading, setLoading] = useState<boolean>(true)
 
     const { fetchData } = useFetch()

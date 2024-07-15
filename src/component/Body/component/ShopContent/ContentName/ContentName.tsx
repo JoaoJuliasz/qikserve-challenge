@@ -1,5 +1,5 @@
 import { Dispatch, SetStateAction } from 'react'
-import icon from '../../../../assets/icon/arrow.svg'
+import icon from '../../../../../assets/icon/arrow.svg'
 
 import style from './contentName.module.css'
 
