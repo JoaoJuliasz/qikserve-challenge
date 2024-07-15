@@ -1,0 +1,15 @@
+.cartButton {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    padding: 8px 0;
+    width: 100%;
+    background: #FFFFFF4D;
+    justify-content: center;
+}
+
+@media only screen and (min-width: 951px) {
+    .cartButton {
+        display: none;
+    }
+}

@@ -6,11 +6,12 @@ import style from './modal.module.css'
 
 type Props = {
     headerImg?: string
+    title?: string
     setOpen: Dispatch<SetStateAction<boolean>>
     children: JSX.Element | JSX.Element[]
 }
 
-const Modal = ({ headerImg, setOpen, children }: Props) => {
+const Modal = ({ title, headerImg, setOpen, children }: Props) => {
 
     const handleClick = () => setOpen(false)
 
@@ -25,6 +26,7 @@ const Modal = ({ headerImg, setOpen, children }: Props) => {
             <div className={style.content}>
                 <div className={style.header}>
                     {headerImg ? <div className={style.bgImg} style={{ backgroundImage: `url(${headerImg})` }} /> : null}
+                    {title ? <h6 className={style.title}>{title}</h6> : null}
                     <div onClick={handleClick} className={style.close}>
                         <img src={icon} alt="Modal close icon" />
                     </div>

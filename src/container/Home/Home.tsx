@@ -40,7 +40,7 @@ const Home = () => {
         <HomeProvider value={{ menu, venue, cart, setCart }}>
             <div className={style.container}>
                 <Header bgColor={venue.webSettings.navBackgroundColour} bannerImg={venue.webSettings.bannerImage} />
-                <Body menu={menu} primaryColour={venue.webSettings.primaryColour} />
+                <Body primaryColour={venue.webSettings.primaryColour} />
             </div>
         </HomeProvider>
     )

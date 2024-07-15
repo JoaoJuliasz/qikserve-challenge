@@ -1,0 +1,12 @@
+.container {
+    height: calc(100% - 72px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.container .open {
+    display: flex;
+    justify-content: center;
+    margin: 8px 0 24px;
+}

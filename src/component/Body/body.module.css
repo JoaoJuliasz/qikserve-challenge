@@ -24,6 +24,10 @@
     height: fit-content;
 }
 
+.container .wrapper .allergy {
+    display: none;
+}
+
 @media only screen and (max-width: 950px) {
     .container, .container .wrapper, .container .wrapper .cardWrapper {
         background: #fff;
@@ -31,6 +35,7 @@
 
     .container .wrapper {
         max-width: 100%;
+        position: relative;
     }
 
     .container .wrapper .cardWrapper {
@@ -47,5 +52,27 @@
 
     .container .wrapper .cardWrapper .card:nth-of-type(2) {
         display: none;
+    }
+
+    .container .wrapper .allergy {
+        padding: 24px;
+        height: 70px;
+        background: #F8F9FA;
+        display: flex;
+        justify-content: center;
+        align-items: start;
+    }
+
+    .container .wrapper .allergy .info {
+        font-family: Roboto;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 18.75px;
+        text-decoration: underline;
+        background: #fff;
+        width: 100%;
+        text-align: center;
+        padding: 4px 0;
+        border-radius: 8px;
     }
 }

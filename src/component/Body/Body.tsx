@@ -6,14 +6,17 @@ import Content from "./component/ShopContent/Content/Content";
 import CartComponent from "./component/Cart/Cart";
 
 import style from './body.module.css'
+import { useHomeContext } from "../../hooks/useHomeContext/useHomeContext";
+import OpenCartModal from "./component/Cart/OpenCartModal/OpenCartModal";
 
 type Props = {
-    menu: Menu
     primaryColour: string
 }
 
-const Body = ({ menu, primaryColour }: Props) => {
+const Body = ({ primaryColour }: Props) => {
     const [searchValue, setSearchValue] = useState<string>("")
+
+    const { menu } = useHomeContext()
 
     const sections = useMemo(() => {
         return menu.sections.map(item => ({ title: item.name, image: item.images[0].image }))
@@ -32,6 +35,12 @@ const Body = ({ menu, primaryColour }: Props) => {
                         <CartComponent />
                     </div>
                 </div>
+                <div className={style.allergy}>
+                    <span className={style.info}>
+                        View allergy information
+                    </span>
+                </div>
+                <OpenCartModal />
             </div>
         </div >
     )
