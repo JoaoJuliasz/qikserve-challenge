@@ -27,6 +27,11 @@
     color: #464646;
 }
 
+.container .options {
+    max-width: 150px;
+    overflow: auto;
+}
+
 .container .footer {
     display: flex;
     flex-direction: column;

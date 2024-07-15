@@ -1,14 +1,14 @@
 import { Dispatch, SetStateAction, useState } from 'react';
 
-import Modal from '../../../Modal/Modal';
+import Modal from '../../../../Modal/Modal';
 
-import { useConversion } from '../../../../hooks/useConversion/useConversion';
+import { useConversion } from '../../../../../hooks/useConversion/useConversion';
 import ModalModifier from './component/ModalModifier/ModalModifier';
 
 import style from './contentModal.module.css'
-import ModalButton from '../../../ModalButton/ModalButton';
+import ModalButton from '../../../../ModalButton/ModalButton';
 import QuantityUpdate from '../QuantityUpdate/QuantityUpdate';
-import { useHomeContext } from '../../../../hooks/useHomeContext/useHomeContext';
+import { useHomeContext } from '../../../../../hooks/useHomeContext/useHomeContext';
 
 type Props = {
     item: MenuItem
@@ -41,7 +41,7 @@ const ContentModal = ({ item, setOpen }: Props) => {
                     <p className={style.subTitle}>{item?.description}</p>
                 </div>
                 {item.modifiers ?
-                    <div style={{ maxHeight: '150px', overflow: 'auto' }}>
+                    <div className={style.options}>
                         {item.modifiers.map(modifier => (
                             <ModalModifier key={modifier.id} modifier={modifier} setItemPrice={setItemPrice} setOptions={setOptions} />
                         ))}
