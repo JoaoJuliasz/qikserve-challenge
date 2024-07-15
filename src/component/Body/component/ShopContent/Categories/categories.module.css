@@ -49,3 +49,16 @@
 .container .section.selected .title {
     font-weight: 600;
 }
+
+@media only screen and (max-width: 450px) {
+    .container {
+        justify-content: center;
+    }
+
+}
+
+@media only screen and (max-width: 950px) {
+    .container .section {
+        margin: 0 12px;
+    }
+}

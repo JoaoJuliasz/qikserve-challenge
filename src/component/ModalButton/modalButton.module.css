@@ -17,3 +17,9 @@
     letter-spacing: 0.75px;
     text-align: center;
 }
+
+.button.disabled {
+    background: #dadada;
+    color: #5F5F5F;
+    cursor: not-allowed;
+}

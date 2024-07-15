@@ -13,3 +13,9 @@
     opacity: 1;
     transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
+
+@media only screen and (max-width: 950px)  {
+    .content {
+        margin: 0;
+    }
+}

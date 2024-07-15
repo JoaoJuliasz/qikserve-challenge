@@ -60,3 +60,15 @@
     object-fit: cover;
     border-radius: 4px;
 }
+
+@media only screen and (max-width: 950px) {
+    .item .info  {
+        max-width: 55%;
+        flex: 1;
+    }
+
+    .item .imgWrapper {
+        flex: 1;
+        justify-content: end;
+    }
+}

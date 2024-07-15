@@ -11,7 +11,7 @@ type Props = {
 const ModalButton = ({ text, disabled, onClick }: Props) => {
     const { venue } = useHomeContext()
 
-    return <button className={style.button} style={{ '--primaryColour': venue.webSettings.primaryColour } as CSSProperties}
+    return <button className={`${style.button} ${disabled ? style.disabled : ''}`} style={{ '--primaryColour': venue.webSettings.primaryColour } as CSSProperties}
         disabled={disabled} onClick={onClick}>{text}</button>
 };
 

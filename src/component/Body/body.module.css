@@ -23,3 +23,29 @@
     margin: 0 12px;
     height: fit-content;
 }
+
+@media only screen and (max-width: 950px) {
+    .container, .container .wrapper, .container .wrapper .cardWrapper {
+        background: #fff;
+    }
+
+    .container .wrapper {
+        max-width: 100%;
+    }
+
+    .container .wrapper .cardWrapper {
+        padding: 0;
+        max-width: 100%;
+    }
+
+    .container .wrapper .cardWrapper .card {
+        box-shadow: none;
+        flex: unset;
+        max-width: calc(100% - 24px);
+        width: 100%;
+    }
+
+    .container .wrapper .cardWrapper .card:nth-of-type(2) {
+        display: none;
+    }
+}
