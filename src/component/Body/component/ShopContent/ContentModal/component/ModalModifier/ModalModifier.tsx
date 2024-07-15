@@ -6,7 +6,7 @@ import style from './modalModifier.module.css'
 type Props = {
     modifier: Modifier
     setItemPrice: Dispatch<SetStateAction<number>>
-    setOptions: Dispatch<SetStateAction<string[]>>
+    setOptions: Dispatch<SetStateAction<{ [key: string]: string }[]>>
 }
 
 const ModalModifier = ({ modifier, setItemPrice, setOptions }: Props) => {
@@ -18,7 +18,17 @@ const ModalModifier = ({ modifier, setItemPrice, setOptions }: Props) => {
         const { name, value } = event.target
         setModifierSelections(prev => ({ ...prev, [modifier.name]: Number(value) }))
         setItemPrice(Number(value))
-        setOptions(prev => ([...prev, `${name} (${formatCurrency(Number(value))})`]))
+        setOptions(prev => {
+            const updtPrev: { [key: string]: string }[] = JSON.parse(JSON.stringify(prev))
+            const idx = updtPrev.findIndex(item => Object.keys(item)[0] === modifier.name)
+            const option = `${name} (${formatCurrency(Number(value))})`
+            if (idx > -1) {
+                updtPrev[idx][modifier.name] = option
+            } else {
+                updtPrev.push({[modifier.name]: option})
+            }
+            return updtPrev
+        })
     }
 
     return (

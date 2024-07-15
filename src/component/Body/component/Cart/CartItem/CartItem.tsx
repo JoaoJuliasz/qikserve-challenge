@@ -18,9 +18,9 @@ const CartItem = ({ item, index }: Props) => {
         setCart(prev => {
             const updtCart: Cart = JSON.parse(JSON.stringify(prev))
             sub ?
-                (updtCart[index].total > 1 ? updtCart[index].total-- : 
+                (updtCart[index].total > 1 ? updtCart[index].total-- :
                     updtCart.splice(index, 1)
-                    )
+                )
                 : updtCart[index].total++
             return updtCart
         })
@@ -32,7 +32,7 @@ const CartItem = ({ item, index }: Props) => {
                 <div className={style.details}>
                     <span className={style.name}>{item.title}</span>
                     {
-                        item.options?.map(option => <span className={style.option}>{option}</span>)
+                        item.options?.map(option => <span key={option} className={style.option}>{option}</span>)
                     }
                 </div>
                 <QuantityUpdate cart={true} size={item.total} subMethod={() => qtyMethod(true)} addMethod={() => qtyMethod()} />

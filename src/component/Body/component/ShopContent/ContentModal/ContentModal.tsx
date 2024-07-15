@@ -18,7 +18,7 @@ type Props = {
 const ContentModal = ({ item, setOpen }: Props) => {
     const [size, setSize] = useState<number>(1)
     const [itemPrice, setItemPrice] = useState<number>(0)
-    const [options, setOptions] = useState<string[]>([])
+    const [options, setOptions] = useState<{ [key: string]: string }[]>([])
 
     const { formatCurrency } = useConversion()
 
@@ -29,7 +29,7 @@ const ContentModal = ({ item, setOpen }: Props) => {
             title: item.name,
             price: itemPrice || item.price,
             total: size,
-            options
+            options: options.map(option => Object.values(option)[0])
         }]))
         setOpen(false)
     }
@@ -51,7 +51,7 @@ const ContentModal = ({ item, setOpen }: Props) => {
                 }
                 <div className={style.footer}>
                     <QuantityUpdate size={size} subMethod={() => setSize(prev => prev > 0 ? prev - 1 : 0)} addMethod={() => setSize(prev => prev + 1)} />
-                    <ModalButton disabled={size === 0} text={`Add to order • ${formatCurrency((itemPrice || item.price) * size)}`} onClick={handleClick} />
+                    <ModalButton disabled={size === 0 || (item.modifiers && item.modifiers.length > 0 && options.length !== item.modifiers.length)} text={`Add to order • ${formatCurrency((itemPrice || item.price) * size)}`} onClick={handleClick} />
                 </div>
             </div>
         </Modal>

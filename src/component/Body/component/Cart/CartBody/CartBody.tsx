@@ -26,7 +26,7 @@ const CartBody = () => {
     return (
         <div className={style.container}>
             <div>
-                {cart.map((item, index) => <CartItem item={item} index={index} />)}
+                {cart.map((item, index) => <CartItem key={index} item={item} index={index} />)}
             </div>
             <div className={style.totalWrapper}>
                 <div className={style.wrapper}>
