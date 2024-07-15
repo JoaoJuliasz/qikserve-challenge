@@ -40,7 +40,7 @@
     "typescript": "^5.2.2",
     "vite": "^5.3.1"
   },
-  "homepage": "https://joaojuluasz.github.io/qikserve-challenge",
+  "homepage": "https://joaojuliasz.github.io/qikserve-challenge",
   "jest": {
     "preset": "ts-jest",
     "testEnvironment": "jsdom",

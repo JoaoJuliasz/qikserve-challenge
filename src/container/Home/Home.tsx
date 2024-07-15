@@ -18,7 +18,7 @@ const Home = () => {
     const { fetchData } = useFetch()
 
     const getData = () => {
-        Promise.all([fetchData<Venue>('/api/challenge/venue/9'), fetchData<Menu>('/api/challenge/menu')])
+        Promise.all([fetchData<Venue>('/challenge/venue/9'), fetchData<Menu>('/challenge/menu')])
             .then(res => {
                 setVenue(res[0])
                 setMenu(res[1])
